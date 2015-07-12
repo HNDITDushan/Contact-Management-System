@@ -16,5 +16,29 @@ public enum ContactType {
     Work,
     Fax,
     E_mail,
-    Web,;
+    Web,
+    TeamViwerId,;
+    
+    public String getValues() {
+        switch (this) {
+            case Mobile:
+                return "Mobile";
+            case Telephone:
+                return "Telephone";
+            case Home:
+                return "Home";
+            case Work:
+                return "Work";
+            case Fax:
+                return "Fax";
+            case E_mail:
+                return "E-mail";
+            case Web:
+                return "Web Address";
+            case TeamViwerId:
+                return "Team Viwer";
+
+        }
+        return "Other";
+    }
 }
