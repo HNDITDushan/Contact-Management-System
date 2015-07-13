@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePersonTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePersonLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{personController.selected.id}" title="#{bundle.CreatePersonTitle_id}" />
+                    <h:outputLabel value="#{bundle.CreatePersonLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{personController.selected.name}" title="#{bundle.CreatePersonTitle_name}" />
+                    <h:outputLabel value="#{bundle.CreatePersonLabel_dateOfBirth}" for="dateOfBirth" />
+                    <h:inputText id="dateOfBirth" value="#{personController.selected.dateOfBirth}" title="#{bundle.CreatePersonTitle_dateOfBirth}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreatePersonLabel_nicNo}" for="nicNo" />
+                    <h:inputText id="nicNo" value="#{personController.selected.nicNo}" title="#{bundle.CreatePersonTitle_nicNo}" />
+                    <h:outputLabel value="#{bundle.CreatePersonLabel_bloodGroup}" for="bloodGroup" />
+                    <h:inputText id="bloodGroup" value="#{personController.selected.bloodGroup}" title="#{bundle.CreatePersonTitle_bloodGroup}" />
+                    <h:outputLabel value="#{bundle.CreatePersonLabel_sex}" for="sex" />
+                    <h:inputText id="sex" value="#{personController.selected.sex}" title="#{bundle.CreatePersonTitle_sex}" />
+                    <h:outputLabel value="#{bundle.CreatePersonLabel_sivilStatus}" for="sivilStatus" />
+                    <h:inputText id="sivilStatus" value="#{personController.selected.sivilStatus}" title="#{bundle.CreatePersonTitle_sivilStatus}" />
+                    <h:outputLabel value="#{bundle.CreatePersonLabel_group}" for="group" />
+                    <h:inputText id="group" value="#{personController.selected.group}" title="#{bundle.CreatePersonTitle_group}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{personController.create}" value="#{bundle.CreatePersonSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{personController.prepareList}" value="#{bundle.CreatePersonShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreatePersonIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

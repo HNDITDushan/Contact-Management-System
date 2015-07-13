@@ -12,8 +12,8 @@ package com.sniper.enums;
 public enum ContactType {
     Mobile,
     Telephone,
-    Home,
-    Work,
+//    Home,
+//    Work,
     Fax,
     E_mail,
     Web,
@@ -25,10 +25,10 @@ public enum ContactType {
                 return "Mobile";
             case Telephone:
                 return "Telephone";
-            case Home:
-                return "Home";
-            case Work:
-                return "Work";
+//            case Home:
+//                return "Home";
+//            case Work:
+//                return "Work";
             case Fax:
                 return "Fax";
             case E_mail:

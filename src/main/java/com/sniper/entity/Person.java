@@ -6,6 +6,8 @@
 package com.sniper.entity;
 
 import com.sniper.enums.BloodGroup;
+import com.sniper.enums.Sex;
+import com.sniper.enums.SivilStatus;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
@@ -27,15 +29,20 @@ public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    String name;
+    private String name;
     @Temporal(TemporalType.DATE)
-    Date dateOfBirth;
-    String nicNo;
+    private Date dateOfBirth;
+    private String nicNo;
     @Enumerated(EnumType.STRING)
-    BloodGroup bloodGroup;
+    private BloodGroup bloodGroup;
+    @Enumerated(EnumType.STRING)
+    private Sex sex;
+    @Enumerated(EnumType.STRING)
+    private SivilStatus sivilStatus;
+    private Group group;
     
-    Address PersonalAddress;
-    Address workAddress;
+//    Address PersonalAddress;
+//    Address workAddress;
 
     public Long getId() {
         return id;
@@ -68,6 +75,62 @@ public class Person implements Serializable {
     @Override
     public String toString() {
         return "com.sniper.entity.Person[ id=" + id + " ]";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getNicNo() {
+        return nicNo;
+    }
+
+    public void setNicNo(String nicNo) {
+        this.nicNo = nicNo;
+    }
+
+    public BloodGroup getBloodGroup() {
+        return bloodGroup;
+    }
+
+    public void setBloodGroup(BloodGroup bloodGroup) {
+        this.bloodGroup = bloodGroup;
+    }
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
+    public SivilStatus getSivilStatus() {
+        return sivilStatus;
+    }
+
+    public void setSivilStatus(SivilStatus sivilStatus) {
+        this.sivilStatus = sivilStatus;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
     
 }
